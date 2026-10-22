@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
 
-    private float PlayerSpeed;
+    [SerializeField]private float PlayerSpeed = 50f;
 
     private void Awake()
     {
@@ -14,26 +14,37 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Update()
+    private void Update(int dirX)
     {
-
-        int dirx;
-        if (Input.touches.Length > 0)
+        if(Application.isEditor)
         {
-            Vector3 touchPosition = Input.touches[0].position;
-            touchPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+          
+        }
+        else
+        {
+            if (Input.touches.Length > 0)
+            {
+                Vector3 touchPosition = Input.touches[0].position;
+                touchPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            if(touchPosition.x > 0)
-            {
-                //go right
-                dirx = 1;
-            }
-            else
-            {
-                //go left
-                dirx = -1;
+                if (touchPosition.x > 0)
+                {
+                    //go right
+                    dirX = 1;
+                }
+                else
+                {
+                    //go left
+                    dirX = -1;
+                }
+
             }
 
         }
+
+
+        
+
+        rb.linearVelocity = new Vector2(dirX * PlayerSpeed * Time.deltaTime, 0);
     }
 }
