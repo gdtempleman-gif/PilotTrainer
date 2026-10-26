@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -19,6 +20,8 @@ private Vector2 startTouchPosition;
     {
         if (Input.touchCount > 0)// Check if there are any touches
         {
+         
+
             Touch touch = Input.GetTouch(0);// Gets the first touch
             switch (touch.phase)
             {
@@ -81,7 +84,16 @@ private Vector2 startTouchPosition;
                     break;
             }
 
-                    
+            float newX = Mathf.MoveTowards(
+                transform.position.x,
+                TargetLaneX,
+                5f * Time.deltaTime);//this states that the player should move its current position to the target lane selected
+
+
+            transform.position = new Vector3(newX,
+                transform.position.y,
+                transform.position.z);// this is what will actually effect the players possition
+           
         }
     }
 }// update check
