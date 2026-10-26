@@ -87,7 +87,7 @@ private Vector2 startTouchPosition;
             float newX = Mathf.MoveTowards(
                 transform.position.x,
                 TargetLaneX,
-                5f * Time.deltaTime);//this states that the player should move its current position to the target lane selected
+                10f * Time.deltaTime);//this states that the player should move its current position to the target lane selected
 
 
             transform.position = new Vector3(newX,
