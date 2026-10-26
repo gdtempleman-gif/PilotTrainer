@@ -96,4 +96,4 @@ private Vector2 startTouchPosition;
            
         }
     }
-}// update check
+}// update check check
