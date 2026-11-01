@@ -1,12 +1,17 @@
-using JetBrains.Annotations;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class HealthSystem : MonoBehaviour
 {
     int currentHealth = 3;
     public TMP_Text healthText;
+
+    bool isRolling = false;// this is to check if the player is rolling or not, if they are rolling they will not take damage
+    bool canRoll = true; // This will check if the payer can press the roll button again or not
+    public float rollCooldown = 3f; // The cooldown time for rolling
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,12 +43,40 @@ public class HealthSystem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))// checks if you collide with the enemy to trigger the if statament
+        if (collision.gameObject.CompareTag("Enemy") && !isRolling)// checks if you collide with the enemy and if the player is rolling so it knows to trigger the if statament
         {
             TakeDamage();// causes you to take damage
         }
     }
 
-    
+    public void StartRoll()
+    {
+        if(canRoll)
+        {
+            canRoll = false; // This sets the canRoll state to false to prevent rolling again during cooldown
+
+            StartCoroutine(Roll()); // This starts the roll coroutine
+          
+            StartCoroutine(RollCooldown()); // This starts the roll cooldown coroutine
+        }
+
+    }
+
+    IEnumerator Roll() 
+    { 
+        isRolling = true;// This is to set the rolling state to true when the roll starts
+
+        yield return new WaitForSeconds(1f); // This is the duration of the roll 
+
+        isRolling = false;// This is to set the rolling state back to false after the roll is complete
+    }
+
+    IEnumerator RollCooldown()
+    {
+       yield return new WaitForSeconds(rollCooldown); // This is the cooldown time for rolling
+
+        canRoll = true; // This is to set the canRoll state back to true after the cooldown is complete
+    }
+
 
 }
