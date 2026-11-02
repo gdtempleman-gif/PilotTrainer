@@ -556,12 +556,12 @@ MonoBehaviour:
   - {fileID: 2117571763}
   - {fileID: 1127026440}
   Hazards:
-  - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
-  - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
-  - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
-  - {fileID: 4870166359345325597, guid: 8777ac30380ebd04aaccc948aef6bfa8, type: 3}
-  startTimeBtwSpawns: 1.5
-  minTimeBetweenSpawns: 0.75
+  - {fileID: 4550589763964404922, guid: b386bcdf8689b8a41b392effb24bb7b6, type: 3}
+  - {fileID: 5778949830617608966, guid: 054fa2e15bc61ae458d6bd44a18c25ed, type: 3}
+  - {fileID: 1469949494316534181, guid: 724a6118c2559cd43a3906ddf19eb4b6, type: 3}
+  - {fileID: 2742446565746914675, guid: 7817daa4a66bca34d9983c6fcdf4e057, type: 3}
+  startTimeBtwSpawns: 2.5
+  minTimeBetweenSpawns: 1.5
   decrease: 0.05
 --- !u!4 &650721548
 Transform:
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 1046111001}
   - component: {fileID: 1046111000}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 1224994406}
   - component: {fileID: 1224994405}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: 3'
+  m_text: Time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 1261807895}
   - component: {fileID: 1261807896}
   - component: {fileID: 1261807897}
+  - component: {fileID: 1261807898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1298,6 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthText: {fileID: 1046111000}
+  survivalTimer: {fileID: 1261807898}
   rollCooldown: 3
   roll: {fileID: 0}
 --- !u!61 &1261807896
@@ -1358,6 +1360,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018818f5202de7b47bf6aec2b99c5e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyCollision
+--- !u!114 &1261807898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261807890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703cabeb37019114492429af162b923d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurvivalTimer
+  survivalTime: 0
+  survivalTimeText: {fileID: 1224994405}
 --- !u!1 &1329823249
 GameObject:
   m_ObjectHideFlags: 0

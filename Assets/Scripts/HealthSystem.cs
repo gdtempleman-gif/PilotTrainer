@@ -3,11 +3,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
+using UnityEditor;
 
 public class HealthSystem : MonoBehaviour
 {
     int currentHealth = 3;
     public TMP_Text healthText;
+    public SurvivalTimer survivalTimer;
+
 
     bool isRolling = false;// this is to check if the player is rolling or not, if they are rolling they will not take damage
     bool canRoll = true; // This will check if the payer can press the roll button again or not
@@ -38,6 +41,8 @@ public class HealthSystem : MonoBehaviour
 
         if (currentHealth <= 0)// This checks if you meet the parameters of being 0 health or lower
         {
+            survivalTimer.SaveSurvivalTime();// This saves the survival time to the playerprefs
+
             SceneManager.LoadScene("GameOver");// This takes you to the gameover scene
         }
         healthText.text = "Health: " + currentHealth;
