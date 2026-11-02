@@ -744,7 +744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243.6, y: 686.6}
+  m_AnchoredPosition: {x: -350, y: 1000}
   m_SizeDelta: {x: 263.69, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046111000
@@ -1002,6 +1002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthText: {fileID: 1046111000}
   rollCooldown: 3
+  roll: {fileID: 0}
 --- !u!61 &1261807896
 BoxCollider2D:
   m_ObjectHideFlags: 0
