@@ -323,6 +323,9 @@ MonoBehaviour:
   - {fileID: 30338576}
   Hazards:
   - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
+  - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
+  - {fileID: 4870166359345325597, guid: cc39f26ccdfb9dc458bad355a7030747, type: 3}
+  - {fileID: 4870166359345325597, guid: 8777ac30380ebd04aaccc948aef6bfa8, type: 3}
   startTimeBtwSpawns: 1.5
   minTimeBetweenSpawns: 0.75
   decrease: 0.05
@@ -1457,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 487.3, y: -166.48}
+  m_AnchoredPosition: {x: 550, y: -350}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1945347543
