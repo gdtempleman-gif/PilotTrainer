@@ -9,7 +9,7 @@ public class GameOver_UI : MonoBehaviour
     {
         float finalTime = PlayerPrefs.GetFloat("SurvivalTime", 0f); // Retrieve the survival time from PlayerPrefs
 
-        Debug.Log("Final Survival Time: " + finalTime); // Log the final survival time for debugging
+        Debug.Log("Final Survival Time: " + finalTime); // Log the final survival time for debugging and testing to show action is takeing place in console
 
         int minutes = Mathf.FloorToInt(finalTime / 60f); // Calculate minutes from total seconds
 

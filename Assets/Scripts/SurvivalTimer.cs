@@ -15,7 +15,7 @@ public class SurvivalTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        survivalTime += Time.deltaTime; // Increment the survival time by the time elapsed since the last frame
+        survivalTime += Time.deltaTime; // Increment the survival time by the time elapsed since the last frame(Counts the time the player has survived in seconds)
         survivalTimeText.text = "Survival Time: " + Mathf.FloorToInt(survivalTime) + "s"; // Update the text to show the survival time in seconds   
 
     }

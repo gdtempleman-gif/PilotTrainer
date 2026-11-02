@@ -41,7 +41,7 @@ public class HealthSystem : MonoBehaviour
 
         if (currentHealth <= 0)// This checks if you meet the parameters of being 0 health or lower
         {
-            survivalTimer.SaveSurvivalTime();// This saves the survival time to the playerprefs
+            survivalTimer.SaveSurvivalTime();// This saves the survival time to the playerprefs so it can be displayed in the gameover scene
 
             SceneManager.LoadScene("GameOver");// This takes you to the gameover scene
         }
