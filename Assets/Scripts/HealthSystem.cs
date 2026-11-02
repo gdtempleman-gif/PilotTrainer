@@ -12,6 +12,7 @@ public class HealthSystem : MonoBehaviour
     bool isRolling = false;// this is to check if the player is rolling or not, if they are rolling they will not take damage
     bool canRoll = true; // This will check if the payer can press the roll button again or not
     public float rollCooldown = 3f; // The cooldown time for rolling
+    public AnimationClip roll;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,6 +70,8 @@ public class HealthSystem : MonoBehaviour
         yield return new WaitForSeconds(1f); // This is the duration of the roll 
 
         isRolling = false;// This is to set the rolling state back to false after the roll is complete
+
+        AnimationClip roll = new AnimationClip();
     }
 
     IEnumerator RollCooldown()

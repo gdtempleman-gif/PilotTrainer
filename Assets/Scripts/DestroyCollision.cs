@@ -19,5 +19,11 @@ public class DestroyCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+ 
+
+
     }
+
+
 }
