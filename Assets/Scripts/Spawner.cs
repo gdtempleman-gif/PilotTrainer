@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
                 }// this should cause the spawn rate to increase overtime till it reaches a min amount of ime between spawns
 
                 TimeBtwSpawns = startTimeBtwSpawns;
-                //Spawn Asteroid
+               // This sets the Start time to the new current time.
             }
             else
             {
